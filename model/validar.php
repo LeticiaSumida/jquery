@@ -1,8 +1,11 @@
 <?php
 session_start();
+
 header('Content-type: application/json');
 header('Access-Control-Allow-Origin:*');
+
 include 'conexao.php';
+
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT); 
 $login = $dados ['login'];
 $senha = $senha ['senha'];

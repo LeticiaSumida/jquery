@@ -14,12 +14,11 @@
         <div class="nav-wrapper">
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="select.php">Clientes</a></li>
-                <li><a href="clientes.php"> Novo</a></li>
+                <li><a href="clientes.php">Novo</a></li>
                 <li><a href="sair.php">Sair</a></li>
             </ul>
         </div>
-    </nav>
-    
+    </nav>  
 </body>
 
 <script type="text/javascript" src="../../controller/code.jquery.com_jquery-3.7.1.min.js"></script>

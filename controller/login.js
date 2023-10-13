@@ -3,7 +3,7 @@ $(function(){
         var forma = $(this);
         var dados = forma.serialize();
         $.ajax({
-            url: '../view/validar.php',
+            url: '../model/validar.php',
             data: dados,
             dataType: 'json',
             type: 'POST',
