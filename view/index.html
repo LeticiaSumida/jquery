@@ -1,41 +1,41 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../materialize/css/materialize.min.css">
-        <link rel="stylesheet" href="estilo.css">
-        <title>Jquery - Tutorial</title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="card-panel" style="margin-top: 20%;">
-                    <h6>Insira os dados necessários e faça seu Login</h6>
-                    <form name="form_login" method="post">
-                        <div class="load"></div>
+<!DOCTYPE html>
+<html lang="en">
 
-                        <div class="input-field">
-                            <label> Login </label>   
-                            <input type="text" name="login">             
-                        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Jquery - Tutorial</title>
+</head>
 
-                        <div class="input-field">
-                            <label> Senha </label>   
-                            <input type="text" name="senha">             
-                        </div>
-                        
-                        <input class="btn indigo" type="submit" value="logar">
-                    </form>
-                    <div class="msg"></div>
-                </div> 
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="card-panel" style="margin-top: 20%;">
+                <h6>Insira os dados necessários e faça seu Login</h6>
+                <form name="form_login" method="post" action="#">
+                    <div class="load"></div>
+
+                    <div class="input-field">
+                        <label for="login">Login</label>
+                        <input type="text" name="login" id="login">
+                    </div>
+
+                    <div class="input-field">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha">
+                    </div>
+
+                    <input class="btn indigo" type="submit" value="Logar">
+                </form>
+                <div class="msg"></div>
             </div>
         </div>
-    </body>
+    </div>
+    <script type="text/javascript" src="../controller/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../controller/login.js"></script>
+</body>
 
-        <script type="text/javascript" src="../controller/code.jquery.com_jquery-3.7.1.min.js"></script>
-        <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
-
-        <script type="text/javascript" src="../controller/login.js"></script>>
-        
-    </html>
+</html>

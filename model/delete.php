@@ -14,8 +14,8 @@ $dados = array (
 $field = implode(',', array_keys($dados));
 $places = ':' .implode(', :', array_keys($dados));
 $tabela = 'clientes';
-$delete = "DELETE FROM {$tabela} WHERE {$fields} = {$places} ";
-$sth = $pdo->execute($delete);
+$delete = "DELETE FROM {$tabela} WHERE {$field} = {$places} ";
+$sth = $pdo->prepare($delete);
 if($sth ->execute($dados)):
     $json ['error'] = 'success';
     $json ['msg'] = 'Excluindo...';

@@ -1,9 +1,9 @@
 $(function(){
-    $(document).on('submit', 'from[name="form_cliente"]', function () {
+    $(document).on('submit', 'form[name="form_cliente"]', function () {
         var forma = $(this);
         var dados = forma.serialize();
         $.ajax({
-            url: '../model/insert.php',
+            url: '../../model/insert.php',
             data: dados,
             dataType: 'json',
             type: 'POST',
@@ -15,7 +15,7 @@ $(function(){
                 if (resposta.error === 'success'){
                     $('.msg').text(resposta.msg);
                     setTimeout(function () {
-                        $(location).attr('href', '../view/cliente/select.php');
+                        $(location).attr('href', 'select.php');
                     }, 2000);
                 } else {
                     $('.msg').text(resposta.msg);
@@ -35,7 +35,7 @@ $(function(){
         dados = {cli_id: cli_id}
 
         $.ajax({
-            url: '../model/delete.php',
+            url: '../../model/delete.php',
             data: dados,
             dataType: 'json',
             type: 'POST',
@@ -46,7 +46,7 @@ $(function(){
                 if (resposta.error === 'success'){
                     $('.msg[cli_id="'+cli_id+'"]').text(resposta.msg);
                     setTimeout(function () {
-                        $(location).attr('href', '../view/cliente/select.php');
+                        $(location).attr('href', 'select.php');
                     }, 2000);
                 } else {
                     $('.msg').text(resposta.msg);
@@ -64,7 +64,7 @@ $(function(){
         var forma = $(this);
         var dados = forma.serialize();
         $.ajax({
-            url: '../model/update.php',
+            url: '../../model/update.php',
             data: dados,
             dataType: 'json',
             type: 'POST',
@@ -76,7 +76,7 @@ $(function(){
                 if (resposta.error === 'success'){
                     $('.msg').text(resposta.msg);
                     setTimeout(function () {
-                        $(location).attr('href', '../view/cliente/select.php');
+                        $(location).attr('href', 'select.php');
                     }, 2000);
                 } else {
                     $('.msg').text(resposta.msg);

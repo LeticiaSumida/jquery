@@ -12,14 +12,14 @@ $dados = array (
     'cli_email' => $post['cli_email']
 );
 foreach ($dados as $Key => $Value):
-    $placeKey[] = $Key . ' = : ' . $Key;
+    $placeKey[] = $Key . ' = :' . $Key;
 endforeach;
 $places = implode(', ', $placeKey);
 
 $tabela = 'clientes';
 $referencia = 'cli_id';
 $update = "update {$tabela} set {$places} where {$referencia} = {$id}";
-$sth = $pdo->execute($update);
+$sth = $pdo->prepare($update);
 if($sth ->execute($dados)):
     $json ['error'] = 'success';
     $json ['msg'] = 'Cadastro efetuado com sucesso';
