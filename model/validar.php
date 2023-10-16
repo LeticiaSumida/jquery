@@ -23,6 +23,7 @@ if ($sth->rowCount() > 0) {
 
     $_SESSION['Login']['email'] = $resultado['usu_email'];
     $_SESSION['Login']['senha'] = $resultado['usu_senha'];
+    $_SESSION['Login']['nome'] = $resultado['usu_nome'];
 
     $json['error'] = 'success';
     $json['msg'] = 'Bem Vindo ' . $login;

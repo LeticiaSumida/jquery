@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 header('Content-type: application/json');
 header('Access-Control-Allow-Origin:*');
@@ -20,12 +21,15 @@ $tabela = 'clientes';
 $referencia = 'cli_id';
 $update = "update {$tabela} set {$places} where {$referencia} = {$id}";
 $sth = $pdo->prepare($update);
-if($sth ->execute($dados)):
+if($sth ->execute($dados)){
+    $_SESSION["mensagem"] = "Atualização efetuada com sucesso!";
+    
     $json ['error'] = 'success';
-    $json ['msg'] = 'Cadastro efetuado com sucesso';
-else:
+    $json ['msg'] = 'Atualização efetuada com sucesso';
+}
+else{
     $json ['error'] = 'error insert';
-    $json ['msg'] = 'Não foi possível efetuar o cadastro';
-endif;
+    $json ['msg'] = 'Não foi possível efetuar a atualização';
+}
 
 echo json_encode($json);

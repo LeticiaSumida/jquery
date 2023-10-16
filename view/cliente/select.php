@@ -1,5 +1,13 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["Login"])){
+        header("Location: ../");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -9,10 +17,9 @@
     <title>Clientes - tutorial</title>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+<body style="background-image: url('../img/fundo_cliente.png'); background-size: cover;">
+    <nav class="navbar navbar-expand-lg rosa">
         <div class="container-fluid">
-            <!--<a class="navbar-brand" href="#">Navbar</a>-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,12 +39,21 @@
                     </li>
                 </ul>
             </div>
+            <span class="navbar-text" style="margin-right: 5%">
+                <img src="../img/patinha.png" width="50" height="50">
+            </span>
         </div>
     </nav>
 
     <div class="container" style="margin-top: 5vh;">
         <div class="load"></div>
         <?php
+        
+        if(isset($_SESSION['mensagem'])) {
+            $mensagem = $_SESSION['mensagem'];
+            unset($_SESSION['mensagem']);
+            echo $mensagem;
+        }
 
         include '../../model/conexao.php';
 

@@ -16,12 +16,15 @@ $places = ':' .implode(', :', array_keys($dados));
 $tabela = 'clientes';
 $delete = "DELETE FROM {$tabela} WHERE {$field} = {$places} ";
 $sth = $pdo->prepare($delete);
-if($sth ->execute($dados)):
+if($sth ->execute($dados)){
+    $_SESSION["mensagem"] = "O cliente foi excluído!";
+
     $json ['error'] = 'success';
     $json ['msg'] = 'Excluindo...';
-else:
+}
+else{
     $json ['error'] = 'error delete';
     $json ['msg'] = 'Erro';
-endif;
+}
 
 echo json_encode($json);

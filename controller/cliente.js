@@ -13,12 +13,9 @@ $(function(){
             },
             success: function (resposta) {
                 if (resposta.error === 'success'){
-                    $('.msg').text(resposta.msg);
-                    setTimeout(function () {
-                        $(location).attr('href', 'select.php');
-                    }, 2000);
+                    $(location).attr('href', 'select.php');
                 } else {
-                    $('.msg').text(resposta.msg);
+                    alert(resposta.msg);
                 }
 
             },
@@ -44,12 +41,9 @@ $(function(){
             },
             success: function (resposta) {
                 if (resposta.error === 'success'){
-                    $('.msg[cli_id="'+cli_id+'"]').text(resposta.msg);
-                    setTimeout(function () {
-                        $(location).attr('href', 'select.php');
-                    }, 2000);
+                    $(location).attr('href', 'select.php');
                 } else {
-                    $('.msg').text(resposta.msg);
+                    alert(resposta.msg);
                 }
 
             },
@@ -69,19 +63,14 @@ $(function(){
             dataType: 'json',
             type: 'POST',
             beforeSend: function() {
-                $('.msg').text('');
                 forma.find('.load').fadeIn("fast");
             },
             success: function (resposta) {
                 if (resposta.error === 'success'){
-                    $('.msg').text(resposta.msg);
-                    setTimeout(function () {
-                        $(location).attr('href', 'select.php');
-                    }, 2000);
+                    $(location).attr('href', 'select.php');
                 } else {
-                    $('.msg').text(resposta.msg);
+                    alert(resposta.msg);
                 }
-
             },
             complete: function (){
                 forma.find('.load').fadeOut("fast");

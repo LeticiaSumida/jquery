@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -9,12 +9,15 @@
     <title>Jquery - Tutorial</title>
 </head>
 
-<body style="background-image: url('img/background_image.png'); background-size: cover;">
-    <div class="container w-50">
+<body style="background-image: url('img/fundo_login.png'); background-size: cover;">
+    <div class="container w-25">
         <div class="row align-items-center" style="min-height: 100vh">
-            <div class="col-md-12 bg-secondary text-light d-flex justify-content-center">
-                <div class="p-5">
-                    <h5 class="text-center">Login</h5>
+            <div class="col-md-12 text-light d-flex justify-content-center arredondado rosa sombra">
+                <div class="p-4">
+                    <br>
+                    <h3 class="text-center">Login</h3>
+                    <br>
+                    <h6 class="text-center">Insira seus dados para fazer login</h6>
                     <br>
                     <form name="form_login" method="post" action="#">
                         <div class="load"></div>
@@ -28,9 +31,9 @@
                             <input class="w-100" type="password" name="senha" id="senha" required>
                         </div>
                         <br>
-                        <input class="btn btn-primary btn-md w-100" type="submit" value="Logar">
+                        <input class="btn btn-md w-100 botao text-light" type="submit" value="Logar" id="botaoEnviar">
                     </form>
-                    <div class="msg"></div>
+                    <br>
                 </div>
             </div>
         </div>

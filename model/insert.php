@@ -21,11 +21,13 @@ $create = "INSERT INTO {$tabela} ({$field}) VALUES ({$places})";
 $sth = $pdo->prepare($create);
 
 if ($sth->execute($dados)) {
+    $_SESSION["mensagem"] = "Cadastro efetuado com sucesso!";
+
     $json['error'] = 'success';
-    $json['msg'] = 'Cadastro efetuado com sucesso';
+    $json['msg'] = "Cadastro efetuado com sucesso!";
 } else {
     $json['error'] = 'error insert';
-    $json['msg'] = 'Não foi possível efetuar o cadastro';
+    $json['msg'] = "Não foi possível efetuar o cadastro";
 }
 
 echo json_encode($json);

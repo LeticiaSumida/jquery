@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Concert+One');
+
+body{
+    font-family: 'Concert One';
+}
+
+input{
+    border: none;
+}
+
 .load{
     background-image: url(../img/load.gif);
     width: 100px;
@@ -7,4 +17,26 @@
     top: 40%;
     left: 40%;
     display: none;
+}
+
+.arredondado{
+    border-radius: 10%;
+}
+
+.rosa{
+    background-color: #FFC4AF;
+}
+
+.sombra{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.botao{
+    background-color: #FFAD90;
+    border-radius: 20px;
+}
+
+.botao:hover{
+    transition: .5s;
+    background-color: #FFAEA0;
 }

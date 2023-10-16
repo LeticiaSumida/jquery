@@ -2,6 +2,8 @@ $(function () {
     $(document).on('submit', 'form[name="form_login"]', function (e) {
         e.preventDefault(); // Impede o envio padrão do formulário
 
+        $("#botaoEnviar").prop("disabled", true);
+
         var forma = $(this);
         var dados = forma.serialize();
 
@@ -16,19 +18,19 @@ $(function () {
             },
             success: function (resposta) {
                 if (resposta.error === 'success') {
-                    $('.msg').text(resposta.msg);
-                    setTimeout(function () {
-                        window.location.href = '../view/cliente/home.php';
-                    }, 2000);
+                    window.location.href = '../view/cliente/home.php';
                 } else {
-                    $('.msg').text(resposta.msg);
+                    alert(resposta.msg);
+                    $("#botaoEnviar").prop("disabled", false);
                 }
             },
             error: function (xhr, status, error) {
                 console.log('Erro na solicitação AJAX:', error);
+                $("#botaoEnviar").prop("disabled", false);
             },
             complete: function () {
                 forma.find('.load').fadeOut("fast");
+                $("#botaoEnviar").prop("disabled", false);
             }
         });
     });
