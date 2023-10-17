@@ -44,7 +44,7 @@
         </div>
     </nav>
     <div class="container">
-        <div class="row align-items-center" style="min-height: 80vh">
+        <div class="row align-items-center" style="min-height: 86.1svh">
             <div class="col-md-12 d-flex justify-content-center">
                 <div class="p-4">
                     <?php

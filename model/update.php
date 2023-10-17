@@ -9,8 +9,8 @@ include 'conexao.php';
 $post = filter_input_array(INPUT_POST, FILTER_DEFAULT); 
 $id = $post['cli_id'];
 $dados = array (
-    'cli_nome' => $post['cli_nome'],
-    'cli_email' => $post['cli_email']
+    'cli_nome' => htmlspecialchars($post['cli_nome']),
+    'cli_email' => htmlspecialchars($post['cli_email'])
 );
 foreach ($dados as $Key => $Value):
     $placeKey[] = $Key . ' = :' . $Key;

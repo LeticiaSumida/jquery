@@ -45,47 +45,45 @@
         </div>
     </nav>
 
-    <div class="container" style="margin-top: 5vh;">
+    <div class="container text-center mt-4 text-light">
+        <div class="row">
+            <?php
+                include '../../model/conexao.php';
+
+                $sth = $pdo->prepare("select *from clientes order by cli_id DESC");
+                $sth->execute();
+
+                echo '<div class="col rosa2 p-1 arredondado sombra"><h5>' . $sth->rowCount() . " clientes cadastrados</h5></div>";
+                echo '<div class="col"></div>';
+
+                if(isset($_SESSION['mensagem'])) {
+                    $mensagem = $_SESSION['mensagem'];
+                    unset($_SESSION['mensagem']);
+                    echo '<div class="col rosa2 p-1 arredondado sombra"><h5>' . $mensagem . "</h5></div>";
+                }
+                else{
+                    echo '<div class="col"></div>';
+                }
+            ?>
+        </div>
+    </div>
+    <div class="container-card">
         <div class="load"></div>
+
         <?php
-        
-        if(isset($_SESSION['mensagem'])) {
-            $mensagem = $_SESSION['mensagem'];
-            unset($_SESSION['mensagem']);
-            echo $mensagem;
-        }
-
-        include '../../model/conexao.php';
-
-        $sth = $pdo->prepare("select *from clientes order by cli_id DESC");
-        $sth->execute();
-
-        echo '<h6 class="bg-danger p-2 w-25 mx-auto text-center">' . $sth->rowCount(); if($sth->rowCount() == 1){ echo " Cliente cadastrado"; } else{ echo " Clientes cadastrados"; } echo '</h6>';
-        echo '<br>';
-        echo '<table class="table table-striped">';
-        echo '<thead>';
-        echo '<tr>';
-        echo '<th scope="col"> <b> Nome </b> </th>';
-        echo '<th scope="col"> <b> E-mail </b> </th>';
-        echo '<th scope="col"> <b> Editar </b> </th>';
-        echo '</tr>';
-        echo '</thead>';
-        echo '<tbody>';
         foreach ($sth as $res) {
             extract($res);
+            echo '<div class="card">';
+            echo '<p class="card--text">Nome: ' . $cli_nome . '</p>';
+            echo '<p class="card--text">Email: '. $cli_email . '</p>';
+            echo '<table>';
             echo '<tr>';
-            echo '<td>' . $cli_nome . '</td>';
-            echo '<td>' . $cli_email . '</td>';
-            echo '<td>';
-            echo '<a href="#" class="deleteClientes" cli_id=' . $cli_id . ' "> Excluir </a>';
-            echo ' / ';
-            echo '<a href="formulario_update.php?cli_id=' . $cli_id . ' "> Editar </a>';
-            echo '<div class="msg" cli_id=' . $cli_id . '></div>';
-            echo '</td>';
+            echo '<td><a class="card--link botao" href="formulario_update.php?cli_id=' . $cli_id . ' ">Atualizar</a></td>';
+            echo '<td><a class="card--link botao deleteClientes" href="#" cli_id="' . $cli_id . '">Excluir</a></td>';
             echo '</tr>';
+            echo '</table>';
+            echo '</div>';
         }
-        echo '</tbody>';
-        echo '</table>';
         ?>
     </div>
 </body>

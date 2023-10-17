@@ -20,11 +20,15 @@ input{
 }
 
 .arredondado{
-    border-radius: 10%;
+    border-radius: 20px;
 }
 
 .rosa{
     background-color: #FFC4AF;
+}
+
+.rosa2{
+    background-color: #FFAD90;
 }
 
 .sombra{
@@ -39,4 +43,44 @@ input{
 .botao:hover{
     transition: .5s;
     background-color: #FFAEA0;
+}
+
+.container-card{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 1rem 0;
+}
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 15rem;
+    background: #FFC4AF;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 2rem;
+    overflow: hidden;
+    padding: 1rem;
+}
+.card--text {
+    color: #222;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+}
+.card--link {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    margin: .5rem;
+}
+
+.pad-1{
+    padding: .25rem;
 }

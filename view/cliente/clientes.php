@@ -45,7 +45,7 @@
     </nav>
 
     <div class="container w-25">
-        <div class="row align-items-center" style="min-height: 85vh">
+        <div class="row align-items-center" style="min-height: 86.1svh">
             <div class="col-md-12 text-light d-flex justify-content-center arredondado rosa sombra">
                 <div class="p-5">
                     <h5 class="text-center">Cadastro de Clientes</h5>
@@ -54,12 +54,12 @@
                         <div class="load"></div>
                         <div class="form-group">
                             <label for="login">Nome</label>
-                            <input class="w-100" type="text" name="cli_nome" id="cli_nome" required>
+                            <input class="w-100 arredondado" type="text" name="cli_nome" id="cli_nome" required>
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="login">E-mail</label>
-                            <input class="w-100" type="email" name="cli_email" id="cli_email" required>
+                            <input class="w-100 arredondado" type="email" name="cli_email" id="cli_email" required>
                         </div>
                         <br>
                         <input class="btn btn-md w-100 botao text-light" type="submit" value="Cadastrar" id="botaoEnviar">
